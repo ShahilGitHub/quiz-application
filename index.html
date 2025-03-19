@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>❔Quiz Application</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-100 flex items-center justify-center h-screen">
+    <div class="max-w-md w-full bg-white p-6 rounded-lg shadow-md">
+        <div id="welcome-screen" class="text-center">
+            <h1 class="text-2xl font-bold mb-4">Welcome to the Quiz</h1>
+            <p class="mb-4">Test your knowledge with this interactive quiz.</p>
+            <button onclick="startQuiz()" class="bg-blue-500 text-white px-4 py-2 rounded">Start Quiz</button>
+        </div>
+        
+        <div id="quiz-container" class="hidden">
+            <div id="progress-bar" class="w-full bg-gray-300 h-2 rounded mb-4">
+                <div id="progress" class="bg-blue-500 h-2 rounded" style="width: 0%;"></div>
+            </div>
+            
+            <div id="question-container" class="mb-4">
+                <h2 id="question" class="text-lg font-semibold"></h2>
+                <div id="options" class="mt-4 space-y-2"></div>
+            </div>
+            
+            <div class="flex justify-between mt-4">
+                <button onclick="prevQuestion()" id="prev-btn" class="bg-red-500 text-white px-4 py-2 rounded hidden">Prev</button>
+                <button onclick="nextQuestion()" id="next-btn" class="bg-green-500 text-white px-4 py-2 rounded hidden">Next</button>
+            </div>
+        </div>
+        
+        <div id="result-screen" class="hidden text-center">
+            <h2 class="text-xl font-bold">Quiz Completed!</h2>
+            <p id="score" class="mt-2"></p>
+            <button onclick="restartQuiz()" class="bg-blue-500 text-white px-4 py-2 rounded mt-4">Restart Quiz</button>
+        </div>
+        
+        <div id="timer" class="text-center mt-4 font-semibold">Time Left: <span id="time">30:00</span></div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
